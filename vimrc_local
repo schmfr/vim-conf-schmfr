@@ -1,0 +1,249 @@
+" first the disabled features due to security concerns
+set modelines=0         " no modelines [http://www.guninski.com/vim1.html]
+"let g:secure_modelines_verbose=1 " securemodelines vimscript
+
+" Set Encoding
+set encoding=utf8
+
+" Setup Spellchecker
+autocmd Filetype mail setlocal spell spelllang=de_20,en_us
+autocmd Filetype mail syntax spell toplevel
+autocmd Filetype html setlocal spell spelllang=de_20,en_us
+autocmd Filetype html syntax spell toplevel
+autocmd Filetype php setlocal spell spelllang=de_20,en_us
+autocmd Filetype php syntax spell toplevel
+
+"Set filetype for *.asy-files manually
+autocmd BufNewFile,BufRead *.asy setfiletype asy
+
+"Set colorscheme
+if has('gui_running') | colorscheme PapayaWhip | else | colorscheme navajo | endif
+
+"autocmd Filetype tex source ~/.Vim/auctex.vim
+"autocmd Filetype tex source ~/.vim/mytex.vim
+
+"Printer
+set printexpr=system('kprinter'\ .\ '\ '\ .\ v:fname_in)\ .\ delete(v:fname_in)\ +\ v:shell_error
+"Set more simultanueous Tabs
+set tabpagemax=20
+
+"general settings
+"http://vimdoc.sourceforge.net/htmldoc/vimfaq.html
+set backspace=indent,eol,start
+set showcmd
+syntax on
+set ignorecase
+" Tabs
+"set smarttab                    " make <tab> and <backspace> smarter
+set tabstop=4
+set softtabstop=0
+set noexpandtab
+set list
+set listchars=tab:\|\ 
+set shiftwidth=4
+
+set autoindent
+set showbreak=>\ 
+"autocomplete like the bash
+set wildmode=longest,list 
+"chance completemode to get a more natural feeling
+"see http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+set completeopt=longest,menuone
+"the following settings are copied from http://www.jukie.net/~bart/conf/vimrc
+set nocompatible                " vim defaults, not vi!
+set hidden                      " allow editing multiple unsaved buffers
+"set more                        " the 'more' prompt
+"filetype on                     " automatic file type detection
+set autoread                    " watch for file changes by other programs
+set visualbell                  " visual beep
+"set backup                      " produce *~ backup files
+"set backupext=~                 " add ~ to the end of backup files
+":set patchmode=~                " only produce *~ if not there
+set noautowrite                 " don't automatically write on :next, etc
+let maplocalleader=','          " all my macros start with ,
+"set wildmenu                    " : menu has tab completion, etc
+set scrolloff=5                 " keep at least 5 lines above/below cursor
+set sidescrolloff=5             " keep at least 5 columns left/right of cursor
+set history=200                 " remember the last 200 commands
+
+" ---------------------------------------------------------------------------
+" global editing settings
+set autoindent smartindent      " turn on auto/smart indenting
+set backspace=eol,start,indent  " allow backspacing over indent, eol, & start
+set undolevels=1000             " number of forgivable mistakes
+set updatecount=100             " write swap file to disk every 100 chars
+set complete=.,w,b,u,U,t,i,d    " do lots of scanning on tab completion
+
+" ---------------------------------------------------------------------------
+" searching...
+set hlsearch                   " enable search highlight globally
+set incsearch                  " show matches as soon as possible
+set showmatch                  " show matching brackets when typing
+" disable last one highlight
+nmap <LocalLeader>nh :nohlsearch<cr>
+
+set diffopt=filler,iwhite       " ignore all whitespace and sync
+
+" ---------------------------------------------------------------------------
+" some useful mappings
+noremap  
+xnoremap  
+snoremap  
+noremap!  
+lnoremap  
+" insert newline in normal mode (opposite of <S-J>)
+nmap <LocalLeader>n i<CR><ESC>
+" for the tags
+map <c-y> <c-]>
+"tabulator um durch den buffer zu wechseln
+nnoremap <S-Tab> :bnext<CR>
+"nnoremap <C-Tab> :bnext<CR>
+"nnoremap <S-C-Tab> :bprevious<CR>
+
+"setup some cursor-keys in insert mode
+"see also :he 'winaltkeys'
+imap <M-k> <Up>
+imap <M-h> <Left>
+imap <M-j> <Down>
+imap <M-l> <Right>
+
+"jump between different tabs quickly
+nmap <M-o> :tabnext<CR>
+nmap <M-i> :tabNext<CR>
+
+"see http://www.mail-archive.com/vim-latex-devel@lists.sourceforge.net/msg00014.html
+map ,b  :Bibgrep 
+command -nargs=* Bibgrep call SearchBib(<f-args>)
+" change directory to that of current file
+nmap <LocalLeader>cd :cd%:p:h<cr>
+" change local directory to that of current file
+nmap <LocalLeader>lcd :lcd%:p:h<cr>
+" word swapping
+nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<cr><c-o><c-l>
+" char swapping
+nmap <silent> gc xph
+" save and build
+nmap <LocalLeader>wm  :w<cr>:make<cr>
+" ---------------------------------------------------------------------------
+"  buffer management, note 'set hidden' above
+" Move to next buffer
+map <LocalLeader>bn :bn<cr>
+" Move to previous buffer
+map <LocalLeader>bp :bp<cr>
+" List open buffers
+map <LocalLeader>bb :ls<cr>
+" ---------------------------------------------------------------------------
+" tabs
+map <LocalLeader>tc :tabnew %<cr>    " create a new tab       
+map <LocalLeader>td :tabclose<cr>    " close a tab
+map <LocalLeader>tn :tabnext<cr>     " next tab
+map <LocalLeader>tp :tabprev<cr>     " previous tab
+map <LocalLeader>tm :tabmove         " move a tab to a new location
+
+"useful path
+set path+=~/Work/Resources/LaTeX/ 
+set path+=~/Work/Resources/Bibliography/
+set path+=~/Work/Talks/Archive/
+set path+=~/Work/Teaching/Exercises/
+
+"statusline 
+set statusline= 
+set statusline+=%<\                       " cut at start 
+set statusline+=%2*[%n%H%M%R%W]%*\        " flags 
+set statusline+=%-40f\                    " path 
+set statusline+=%=%1*%y%*%*\              " file type 
+set statusline+=%10((%l,%c)%)\            " line and column 
+set statusline+=%P                        " percentage of file 
+set laststatus=2                          " always show statusline
+
+" REQUIRED. This makes vim invoke latex-suite when you open a tex file.
+let g:tex_flavor = "latex"
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse latex-suite. Set your grep
+" program to alway generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+"add one directory above the current file to the tags setting
+:set tags+=./../tags
+"and Bibliography
+:set tags+=~/Work/Resources/Bibliography/tags
+
+"mappings to work with tags in preview window
+inoremap <M-q> <C-o>:ptag /<C-r><C-W><CR>
+inoremap <M-w> <C-o>:ptprevious<CR>
+inoremap <M-e> <C-o>:ptnext<CR>
+inoremap <M-r> <C-o><C-W><C-Z>
+
+"ctag settings for latex
+"http://www.unb.ca/fredericton/science/chem/ajit/vim.htm
+"let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+"let tlist_make_settings  = 'make;m:makros;t:targets'
+let tlist_tex_settings='latex;b:bibitem;c:command;e:environment;l:label'
+let tlist_bib_settings='bibtex;a:article;b:book;m:misc;p:part;s:string;t:thesis'
+
+"remove Toolbars
+set guioptions-=m
+set guioptions-=T
+"remove scrollbars
+set guioptions-=r
+set guioptions-=L
+
+"remap parenthese, brackets and braces
+"imap <M-v> }
+"imap <M-y> {
+"imap <M-x> [
+"imap <M-c> ]
+"imap <M-s> (
+"imap <M-d> )
+
+"map <M-#> to :b#<CR> for a quicker change between buffers
+nnoremap <M-1> :b1<CR>
+nnoremap <M-2> :b2<CR>
+nnoremap <M-3> :b3<CR>
+nnoremap <M-4> :b4<CR>
+nnoremap <M-5> :b5<CR>
+nnoremap <M-6> :b6<CR>
+nnoremap <M-7> :b7<CR>
+nnoremap <M-8> :b8<CR>
+nnoremap <M-9> :b9<CR>
+
+"prevent NERD_Commenter from echoing "Unknown filetype" messages
+let NERDShutUp=1
+
+
+function SearchBib(first, ...)
+  let keywords = a:first
+  for morekeywords in a:000
+     let keywords = a:first . ' ' . morekeywords
+  endfor
+  cexpr system('bibgrep' . ' ' . keywords)
+  copen
+endfunction
+
+"set up the dictionary
+let g:trv_dictionary="~/.vim/dictionary/de-en.txt" 
+
+"for search the selected word in visual mode
+"see http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
+
+" see http://www.vim.org/scripts/script.php?script_id=2407
+source $VIMRUNTIME/macros/matchit.vim 
+autocmd BufEnter *.m    compiler mlint 
