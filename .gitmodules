@@ -10,3 +10,6 @@
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "bundle/ManPageView"]
+	path = bundle/ManPageView
+	url = https://github.com/vim-scripts/ManPageView.git
