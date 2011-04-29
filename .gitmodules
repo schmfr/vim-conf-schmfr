@@ -19,3 +19,6 @@
 [submodule "bundle/Align"]
 	path = bundle/Align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "bundle/Color_Sampler-Pack"]
+	path = bundle/Color_Sampler-Pack
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
