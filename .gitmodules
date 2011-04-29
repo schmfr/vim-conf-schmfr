@@ -4,3 +4,6 @@
 [submodule "bundle/vim-latex-suite"]
 	path = bundle/vim-latex-suite
 	url = git@github.com:gerw/vim-latex-suite.git
+[submodule "bundle/vcscommand"]
+	path = bundle/vcscommand
+	url = https://github.com/vim-scripts/vcscommand.vim.git
