@@ -40,7 +40,7 @@ set autoindent smartindent      " turn on auto/smart indenting
 " Look
 """""""""""""""""""""""""""""
 "Set colorscheme
-if has('gui_running') | colorscheme PapayaWhip | else | colorscheme navajo | endif
+if has('gui_running') | colorscheme papayawhip | else | colorscheme navajo | endif
 
 syntax on
 set showcmd
@@ -64,9 +64,11 @@ nmap <LocalLeader>nh :nohlsearch<cr>
 set tabpagemax=20
 
 "remove Toolbars
-set guioptions-=mT
+set guioptions-=m
+set guioptions-=T
 "remove scrollbars
-set guioptions-=rL
+set guioptions-=r
+set guioptions-=L
 
 "statusline 
 set statusline= 
