@@ -7,7 +7,7 @@ set modelines=0         " no modelines due to security concerns [http://www.guni
 " Set Encoding
 set encoding=utf8
 
-" Setup Spellchecker - BEI ROLAND UND GERD NACHFRAGEN
+" Setup Spellchecker
 autocmd Filetype mail setlocal spell spelllang=de_20,en_us
 autocmd Filetype mail syntax spell toplevel
 autocmd Filetype html setlocal spell spelllang=de_20,en_us
@@ -39,10 +39,13 @@ set autoindent smartindent      " turn on auto/smart indenting
 """""""""""""""""""""""""""""
 " Look
 """""""""""""""""""""""""""""
-"Set colorscheme
-if has('gui_running') | colorscheme papayawhip | else | colorscheme navajo | endif
-
+" Enable syntax (do it before loading the colorscheme)
+" Set colorscheme and set g:colors_name (this is necessary due to a spelling
+" error in the bundle/Color_Sampler-Pack/papayawhip.vim file where it is set
+" to "PapayaWhip"
+if has('gui_running') | colorscheme papayawhip | let g:colors_name = "papayawhip" | else | colorscheme navajo | endif
 syntax on
+
 set showcmd
 set showbreak=>\ 
 set visualbell                  " visual beep
