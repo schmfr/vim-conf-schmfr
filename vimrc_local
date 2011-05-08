@@ -22,6 +22,35 @@ filetype plugin indent on
 
 
 """""""""""""""""""""""""""""
+" Feel
+"""""""""""""""""""""""""""""
+
+set backspace=eol,start,indent              " allow backspacing over indent, eol, & start
+set undolevels=1000                         " number of forgivable mistakes
+set updatecount=100                         " write swap file to disk every 100 chars
+set complete=.,w,b,u,U,t,i,d                " do lots of scanning on tab completion
+set nocompatible                            " vim defaults, not vi!
+set ignorecase                              " ignore case
+set wildmode=longest,list                   " autocomplete like the bash
+set completeopt=longest,menuone             " chance completemode to get a more natural feeling see http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+let maplocalleader=','                      " all my macros start with ,
+let mapleader=','                           " all my macros start with ,
+set autoread                                " watch for file changes by other programs
+"set more                                    " the 'more' prompt
+"set backup                                  " produce *~ backup files
+"set backupext=~                             " add ~ to the end of backup files
+"set patchmode=~                             " only produce *~ if not there
+"set wildmenu                                " : menu has tab completion, etc
+
+"setup some cursor-keys in insert mode
+"see also :he 'winaltkeys'
+imap <M-k> <Up>
+imap <M-h> <Left>
+imap <M-j> <Down>
+imap <M-l> <Right>
+
+
+"""""""""""""""""""""""""""""
 " Tabstops
 """""""""""""""""""""""""""""
 
@@ -39,6 +68,7 @@ set autoindent smartindent      " turn on auto/smart indenting
 """""""""""""""""""""""""""""
 " Look
 """""""""""""""""""""""""""""
+
 " Enable syntax (do it before loading the colorscheme)
 " Set colorscheme and set g:colors_name (this is necessary due to a spelling
 " error in the bundle/Color_Sampler-Pack/papayawhip.vim file where it is set
@@ -127,34 +157,6 @@ nnoremap <S-Tab> :bnext<CR>
 
 
 """""""""""""""""""""""""""""
-" Feel
-"""""""""""""""""""""""""""""
-
-set backspace=eol,start,indent              " allow backspacing over indent, eol, & start
-set undolevels=1000                         " number of forgivable mistakes
-set updatecount=100                         " write swap file to disk every 100 chars
-set complete=.,w,b,u,U,t,i,d                " do lots of scanning on tab completion
-set nocompatible                            " vim defaults, not vi!
-set ignorecase                              " ignore case
-set wildmode=longest,list                   " autocomplete like the bash
-set completeopt=longest,menuone             " chance completemode to get a more natural feeling see http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-let maplocalleader=','                      " all my macros start with ,
-set autoread                                " watch for file changes by other programs
-"set more                                    " the 'more' prompt
-"set backup                                  " produce *~ backup files
-"set backupext=~                             " add ~ to the end of backup files
-"set patchmode=~                             " only produce *~ if not there
-"set wildmenu                                " : menu has tab completion, etc
-
-"setup some cursor-keys in insert mode
-"see also :he 'winaltkeys'
-imap <M-k> <Up>
-imap <M-h> <Left>
-imap <M-j> <Down>
-imap <M-l> <Right>
-
-
-"""""""""""""""""""""""""""""
 " MISC
 """""""""""""""""""""""""""""
 
@@ -163,9 +165,6 @@ set path+=~/Work/Resources/LaTeX/
 set path+=~/Work/Resources/Bibliography/
 set path+=~/Work/Talks/Archive/
 set path+=~/Work/Teaching/Exercises/
-
-" prevent NERD_Commenter from echoing "Unknown filetype" messages
-let NERDShutUp=1
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse latex-suite. Set your grep
