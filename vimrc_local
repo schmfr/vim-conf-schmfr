@@ -94,7 +94,7 @@ set diffopt=filler,iwhite       " ignore all whitespace and sync
 nmap <LocalLeader>nh :nohlsearch<cr>
 
 "Set more simultanueous Tabs
-set tabpagemax=20
+set tabpagemax=50
 
 "remove Toolbars
 set guioptions-=m
