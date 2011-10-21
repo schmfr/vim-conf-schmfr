@@ -2,6 +2,20 @@
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_ViewRule_pdf = 'synctex_wrapper'
 
+" Customization of labels of environments
+let g:Tex_EnvLabelprefix_assumption = "asm:"
+let g:Tex_EnvLabelprefix_definition = "def:"
+let g:Tex_EnvLabelprefix_remark = "rem:"
+let g:Tex_EnvLabelprefix_corollary = "cor:"
+let g:Tex_EnvLabelprefix_align = "eq:"
+let g:Tex_EnvLabelprefix_equation = "eq:"
+let g:Tex_EnvLabelprefix_subequations = "eq:"
+
+" Created environments should end in <CR>+<++>
+let g:Tex_EnvEndWithCR = 1
+" Created labels before or after content?
+let g:Tex_LabelAfterContent = 0
+
 
 let g:Tex_FontMaps = 0 
 
