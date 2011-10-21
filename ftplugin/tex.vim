@@ -3,13 +3,13 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_ViewRule_pdf = 'synctex_wrapper'
 
 " Customization of labels of environments
-let g:Tex_EnvLabelprefix_assumption = "asm:"
-let g:Tex_EnvLabelprefix_definition = "def:"
-let g:Tex_EnvLabelprefix_remark = "rem:"
-let g:Tex_EnvLabelprefix_corollary = "cor:"
-let g:Tex_EnvLabelprefix_align = "eq:"
-let g:Tex_EnvLabelprefix_equation = "eq:"
-let g:Tex_EnvLabelprefix_subequations = "eq:"
+let g:Tex_EnvLabelprefix_assumption = "assumption:"
+let g:Tex_EnvLabelprefix_definition = "definition:"
+let g:Tex_EnvLabelprefix_remark = "remark:"
+let g:Tex_EnvLabelprefix_corollary = "corollary:"
+let g:Tex_EnvLabelprefix_align = "equation:"
+let g:Tex_EnvLabelprefix_equation = "equation:"
+let g:Tex_EnvLabelprefix_subequations = "equation:"
 
 " Created environments should end in <CR>+<++>
 let g:Tex_EnvEndWithCR = 1
@@ -17,7 +17,7 @@ let g:Tex_EnvEndWithCR = 1
 let g:Tex_LabelAfterContent = 0
 
 
-let g:Tex_FontMaps = 0 
+let g:Tex_FontMaps = 1 
 
 "" DEBUG variable:
 let g:Tex_Debug = 1
@@ -63,9 +63,9 @@ endfunction
 " Environments:
 let g:Tex_Env_block = "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}"
 let g:Tex_Env_frame = "\\begin{frame}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}"
-let g:Tex_Env_lemma = "\\begin{lemma}\<CR><++>\<CR>\\label{lem:<++>}\<CR>\\end{lemma}"
-let g:Tex_Env_theorem = "\\begin{theorem}\<CR><++>\<CR>\\label{thm:<++>}\<CR>\\end{theorem}"
-let g:Tex_Env_assumption = "\\begin{assumption}\<CR><++>\<CR>\\label{asm:<++>}\<CR>\\end{assumption}"
-let g:Tex_Env_definition = "\\begin{definition}\<CR><++>\<CR>\\label{def:<++>}\<CR>\\end{definition}"
+"let g:Tex_Env_lemma = "\\begin{lemma}\<CR><++>\<CR>\\label{lem:<++>}\<CR>\\end{lemma}"
+"let g:Tex_Env_theorem = "\\begin{theorem}\<CR><++>\<CR>\\label{thm:<++>}\<CR>\\end{theorem}"
+"let g:Tex_Env_assumption = "\\begin{assumption}\<CR><++>\<CR>\\label{asm:<++>}\<CR>\\end{assumption}"
+"let g:Tex_Env_definition = "\\begin{definition}\<CR><++>\<CR>\\label{def:<++>}\<CR>\\end{definition}"
 
 
