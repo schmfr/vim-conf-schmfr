@@ -1,3 +1,30 @@
+" REQUIRED: This makes vim invoke latex-suite when you open a tex file.
+let g:tex_flavor = "latex"
+
+" useful path's
+set path+=~/Work/Resources/LaTeX/ 
+set path+=~/Work/Resources/Bibliography/
+set path+=~/Work/Talks/Archive/
+set path+=~/Work/Teaching/Exercises/
+
+" and Bibliography
+:set tags+=~/Work/Resources/Bibliography/tags
+
+" set iskeyword for a better completition
+set iskeyword+=:
+set iskeyword+=_
+
+" Search for packages:
+set suffixesadd+=.sty
+set suffixesadd+=.cls
+
+"ctag settings for latex
+"http://www.unb.ca/fredericton/science/chem/ajit/vim.htm
+"let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+"let tlist_make_settings  = 'make;m:makros;t:targets'
+let tlist_tex_settings='latex;b:bibitem;c:command;e:environment;l:label'
+let tlist_bib_settings='bibtex;a:article;b:book;m:misc;p:part;s:string;t:thesis'
+
 " Forward Search
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_ViewRule_pdf = 'synctex_wrapper'
