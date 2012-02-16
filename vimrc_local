@@ -14,9 +14,8 @@ autocmd Filetype html setlocal spell spelllang=de_20,en_us
 autocmd Filetype html syntax spell toplevel
 autocmd Filetype php setlocal spell spelllang=de_20,en_us
 autocmd Filetype php syntax spell toplevel
-
-" REQUIRED: This makes vim invoke latex-suite when you open a tex file.
-let g:tex_flavor = "latex"
+autocmd Filetype tex setlocal spell spelllang=de_20,en_us
+autocmd Filetype tex syntax spell toplevel
 
 filetype plugin indent on
 
@@ -36,6 +35,8 @@ set completeopt=longest,menuone             " chance completemode to get a more 
 let maplocalleader=','                      " all my macros start with ,
 let mapleader=','                           " all my macros start with ,
 set autoread                                " watch for file changes by other programs
+set textwidth=79                            " set textwidth
+set formatoptions+=l                         "do not auto-wrap long lines
 "set more                                    " the 'more' prompt
 "set backup                                  " produce *~ backup files
 "set backupext=~                             " add ~ to the end of backup files
@@ -74,6 +75,7 @@ set autoindent smartindent      " turn on auto/smart indenting
 " error in the bundle/Color_Sampler-Pack/papayawhip.vim file where it is set
 " to "PapayaWhip"
 if has('gui_running') | colorscheme papayawhip | let g:colors_name = "papayawhip" | else | colorscheme navajo | endif
+" Other nice colorschemes: moria, navajo-night
 syntax on
 
 set showcmd
@@ -160,12 +162,6 @@ nnoremap <S-Tab> :bnext<CR>
 " MISC
 """""""""""""""""""""""""""""
 
-" useful path's
-set path+=~/Work/Resources/LaTeX/ 
-set path+=~/Work/Resources/Bibliography/
-set path+=~/Work/Talks/Archive/
-set path+=~/Work/Teaching/Exercises/
-
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse latex-suite. Set your grep
 " program to alway generate a file-name.
@@ -209,8 +205,6 @@ map <c-y> <c-]>
 
 " add one directory above the current file to the tags setting
 :set tags+=./../tags
-" and Bibliography
-:set tags+=~/Work/Resources/Bibliography/tags
 
 " mappings to work with tags in preview window
 inoremap <M-q> <C-o>:ptag /<C-r><C-W><CR>
@@ -218,13 +212,8 @@ inoremap <M-w> <C-o>:ptprevious<CR>
 inoremap <M-e> <C-o>:ptnext<CR>
 inoremap <M-r> <C-o><C-W><C-Z>
 
-"ctag settings for latex
-"http://www.unb.ca/fredericton/science/chem/ajit/vim.htm
-"let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
-"let tlist_make_settings  = 'make;m:makros;t:targets'
-let tlist_tex_settings='latex;b:bibitem;c:command;e:environment;l:label'
-let tlist_bib_settings='bibtex;a:article;b:book;m:misc;p:part;s:string;t:thesis'
-
+"prevent NERD_Commenter from echoing "Unknown filetype" messages
+"let NERDShutUp=1
 
 """""""""""""""""""""""""""""
 " Improved * and # behavier 
