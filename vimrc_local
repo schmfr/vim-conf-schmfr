@@ -45,10 +45,10 @@ set formatoptions+=l                         "do not auto-wrap long lines
 
 "setup some cursor-keys in insert mode
 "see also :he 'winaltkeys'
-imap <M-k> <Up>
-imap <M-h> <Left>
-imap <M-j> <Down>
-imap <M-l> <Right>
+"imap <M-k> <Up>
+"imap <M-h> <Left>
+"imap <M-j> <Down>
+"imap <M-l> <Right>
 
 
 """""""""""""""""""""""""""""
@@ -130,8 +130,8 @@ map <LocalLeader>tp :tabprev<cr>     " previous tab
 map <LocalLeader>tm :tabmove         " move a tab to a new location
 
 "jump between different tabs quickly
-nmap <M-o> :tabnext<CR>
-nmap <M-i> :tabNext<CR>
+nmap <M-f> :tabnext<CR>
+nmap <M-g> :tabNext<CR>
 
 "map <M-#> to :b#<CR> for a quicker change between buffers
 nnoremap <M-1> :b1<CR>
