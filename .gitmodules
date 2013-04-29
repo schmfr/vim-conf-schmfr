@@ -10,9 +10,6 @@
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
-[submodule "bundle/ManPageView"]
-	path = bundle/ManPageView
-	url = https://github.com/vim-scripts/ManPageView.git
 [submodule "bundle/The-NERD-Commenter"]
 	path = bundle/The-NERD-Commenter
 	url = https://github.com/vim-scripts/The-NERD-Commenter.git
