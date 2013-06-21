@@ -10,6 +10,7 @@ set encoding=utf8
 " Setup Spellchecker
 autocmd Filetype mail setlocal spell spelllang=de_20,en_us
 autocmd Filetype mail syntax spell toplevel
+autocmd Filetype mail set textwidth=79
 autocmd Filetype html setlocal spell spelllang=de_20,en_us
 autocmd Filetype html syntax spell toplevel
 autocmd Filetype php setlocal spell spelllang=de_20,en_us
@@ -35,7 +36,7 @@ set completeopt=longest,menuone             " chance completemode to get a more 
 let maplocalleader=','                      " all my macros start with ,
 let mapleader=','                           " all my macros start with ,
 set autoread                                " watch for file changes by other programs
-set textwidth=79                            " set textwidth
+"set textwidth=79                           " set textwidth
 set formatoptions+=l                         "do not auto-wrap long lines
 "set more                                    " the 'more' prompt
 "set backup                                  " produce *~ backup files
