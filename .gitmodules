@@ -28,3 +28,6 @@
 [submodule "bundle/vim-openscad"]
 	path = bundle/vim-openscad
 	url = https://github.com/sirtaj/vim-openscad.git
+[submodule "bundle/vim-exchange"]
+	path = bundle/vim-exchange
+	url = git@github.com:tommcdo/vim-exchange.git
