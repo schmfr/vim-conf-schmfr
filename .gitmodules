@@ -40,3 +40,6 @@
 [submodule "bundle/vim-clojure-highlight"]
 	path = bundle/vim-clojure-highlight
 	url = git@github.com:guns/vim-clojure-highlight.git
+[submodule "bundle/vim-redl"]
+	path = bundle/vim-redl
+	url = git@github.com:dgrnbrg/vim-redl.git
