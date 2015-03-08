@@ -43,3 +43,6 @@
 [submodule "bundle/vim-redl"]
 	path = bundle/vim-redl
 	url = git@github.com:dgrnbrg/vim-redl.git
+[submodule "bundle/vim-cljfmt"]
+	path = bundle/vim-cljfmt
+	url = git@github.com:venantius/vim-cljfmt.git
