@@ -31,3 +31,6 @@
 [submodule "bundle/vim-exchange"]
 	path = bundle/vim-exchange
 	url = git@github.com:tommcdo/vim-exchange.git
+[submodule "bundle/rainbow_parantheses"]
+	path = bundle/rainbow_parantheses
+	url = git@github.com:kien/rainbow_parentheses.vim.git
