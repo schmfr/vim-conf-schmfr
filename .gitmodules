@@ -67,3 +67,6 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = git@github.com:tpope/vim-dispatch.git
+[submodule "bundle/elrodeo-colorscheme"]
+	path = bundle/elrodeo-colorscheme
+	url = https://github.com/chmllr/elrodeo-colorscheme.git
