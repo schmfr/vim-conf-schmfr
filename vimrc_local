@@ -240,6 +240,16 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+"""""""""""""""""""""""""""""
+" Settings for vim-clojure-static
+"""""""""""""""""""""""""""""
+let g:clojure_align_multiline_strings = 1
+
+"""""""""""""""""""""""""""""
+" Settings for vim-cljfmt
+"""""""""""""""""""""""""""""
+let g:clj_fmt_autosave = 0
+
 
 """""""""""""""""""""""""""""
 " Unused
