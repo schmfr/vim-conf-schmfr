@@ -70,3 +70,6 @@
 [submodule "bundle/elrodeo-colorscheme"]
 	path = bundle/elrodeo-colorscheme
 	url = https://github.com/chmllr/elrodeo-colorscheme.git
+[submodule "bundle/vim-classpath"]
+	path = bundle/vim-classpath
+	url = https://github.com/tpope/vim-classpath
